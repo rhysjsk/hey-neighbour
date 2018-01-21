@@ -1,0 +1,31 @@
+{
+  "q1":[],
+  "q2_1":[
+    "People talking, singing or yelling in a home",
+    "People talking, singing or yelling in an entertainment venue such as a pub",
+    "Noise from a shop or small business",
+    "An animal",
+    "A lawnmower or grass-cutter",
+    "A power tool",
+    "A vacuum cleaner",
+    "An air conditioner, heater, or pump",
+    "A musical instrument",
+    "A radio, stereo, subwoofer or television in a home",
+    "Music in a venue such as a pub",
+    "Construction, such as building a block of apartments",
+    "Another kind of noise"
+  ],
+  "q2_2":[
+    "People talking, singing or yelling",
+    "An animal",
+    "A lawnmower or grass-cutter",
+    "A power tool",
+    "A vacuum cleaner",
+    "An air conditioner, heater, or pump",
+    "A musical instrument",
+    "A radio, stereo, subwoofer or television",
+    "Another kind of noise"
+  ],
+  "q4":[
+  ]
+}
