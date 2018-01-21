@@ -1,31 +1,39 @@
 {
-  "q1":[],
+  "q1":[
+    {"value":1, "label":"Being affected by something"},
+    {"value":2, "label":"Someone is complaining about me"}
+  ],
   "q2_1":[
-    "People talking, singing or yelling in a home",
-    "People talking, singing or yelling in an entertainment venue such as a pub",
-    "Noise from a shop or small business",
-    "An animal",
-    "A lawnmower or grass-cutter",
-    "A power tool",
-    "A vacuum cleaner",
-    "An air conditioner, heater, or pump",
-    "A musical instrument",
-    "A radio, stereo, subwoofer or television in a home",
-    "Music in a venue such as a pub",
-    "Construction, such as building a block of apartments",
-    "Another kind of noise"
+    {"value":1, "label":"People talking, singing or yelling in a home"},
+    {"value":2, "label":"People talking, singing or yelling in an entertainment venue such as a pub"},
+    {"value":3, "label":"Noise from a shop or small business"},
+    {"value":4, "label":"An animal"},
+    {"value":5, "label":"A lawnmower or grass-cutter"},
+    {"value":6, "label":"A power tool"},
+    {"value":7, "label":"A vacuum cleaner"},
+    {"value":8, "label":"An air conditioner, heater, or pump"},
+    {"value":9, "label":"A musical instrument"},
+    {"value":10, "label":"A radio, stereo, subwoofer or television in a home"},
+    {"value":11, "label":"Music in a venue such as a pub"},
+    {"value":12, "label":"Construction, such as building a block of apartments"},
+    {"value":13, "label":"Another kind of noise"}
   ],
   "q2_2":[
-    "People talking, singing or yelling",
-    "An animal",
-    "A lawnmower or grass-cutter",
-    "A power tool",
-    "A vacuum cleaner",
-    "An air conditioner, heater, or pump",
-    "A musical instrument",
-    "A radio, stereo, subwoofer or television",
-    "Another kind of noise"
+    {"value":1, "label":"People talking, singing or yelling"},
+    {"value":2, "label":"An animal"},
+    {"value":3, "label":"A lawnmower or grass-cutter"},
+    {"value":4, "label":"A power tool"},
+    {"value":5, "label":"A vacuum cleaner"},
+    {"value":6, "label":"An air conditioner, heater, or pump"},
+    {"value":7, "label":"A musical instrument"},
+    {"value":8, "label":"A radio, stereo, subwoofer or television"},
+    {"value":9, "label":"Another kind of noise"}
   ],
-  "q4":[
+  "q3":[
+    {"value":0, "label":"Outside these hours"},
+    {"value":1, "label":"Between 7am - 8pm on weekdays and 9am and 8pm on weekends"},
+    {"value":2, "label":"Between 7 am - 10 pm on weekdays and 9 am and 10 pm on weekends"},
+    {"value":3, "label":"Between 7 am - 10 pm on weekdays, 9 am and 11 pm on Friday and Saturday, and 9 am and 10 pm on Sunday"},
+    {"value":4, "label":"Between midnight and 8am"}
   ]
 }

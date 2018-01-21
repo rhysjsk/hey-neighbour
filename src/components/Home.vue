@@ -70,7 +70,7 @@ body {
 }
 .option {
   overflow:auto;
-  border-bottom:4px solid rgba(255,255,255,0.3);
+  border-bottom:1px solid rgba(0,255,200,0.2);
   padding: 0 0 4px 0;
   cursor:pointer;
   background-color:#00555a;
@@ -84,7 +84,7 @@ body {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    height: 60px;
+    height: 48px;
     float: left;
     padding-left: 15px;
 }
