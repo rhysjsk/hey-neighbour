@@ -1,18 +1,26 @@
 <template>
   <div class="home">
     <div class="banner">
-      <img src="static/banner_home.svg" />
+      <img src="static/banner_home.svg" alt="banner graphic for Hey Neighbour!"/>
+    </div>
+    <div class="intro-block">
+      <div class="intro">
+        Hey Neighbour is a simple web app designed to help you better understand how the law regarding neighbourly issues apply to you.
+      </div>
+      <div class="region">Victoria</div>
     </div>
     <div class="desc"> 
       What is the problem about?
     </div>
     <div class="options">
-      <div class="option" v-for="option in options">
-        <router-link :to="option.name">
+      <div class="option" v-for="option in options" :class="option.active?'active':'inactive'">
+        <router-link :to="option.active?option.name:''">
           <div class="option-title">{{option.title}}</div>
+          
           <div class="option-icon">
             <img :src="'static/icon_'+option.name+'.svg'">
           </div>
+          <div v-show="!option.active" class="coming-soon">coming soon</div>
           <div class="clearfix"></div>
         </router-link>
       </div>
@@ -21,20 +29,21 @@
 </template>
 
 <script>
+
 export default {
   name: 'Home',
   data () {
     return {
       options: [
-        {name: 'noise', title: 'Noise'},
-        {name: 'plants', title: 'Plants / trees'},
-        {name: 'animals', title: 'Animals'},
-        {name: 'fences', title: 'Fences'},
-        {name: 'building', title: 'Building'},
-        {name: 'parking', title: 'Parking'},
-        {name: 'water', title: 'Water / drainage'},
-        {name: 'safety', title: 'Safety'},
-        {name: 'other', title: 'Something else'}
+        {name: 'noise', title: 'Noise', active: true},
+        {name: 'trees', title: 'Plants / trees', active: true},
+        {name: 'animals', title: 'Animals', active: true},
+        {name: 'fences', title: 'Fences', active: false},
+        {name: 'building', title: 'Building', active: false},
+        {name: 'parking', title: 'Parking', active: false},
+        {name: 'water', title: 'Water / drainage', active: false},
+        {name: 'safety', title: 'Safety', active: false},
+        {name: 'other', title: 'Something else', active: false}
       ]
     }
   },
@@ -51,7 +60,27 @@ body {
   font-family: 'Ubuntu', sans-serif;  
   background-color:#111;
 }
-
+.intro-block {
+  position:relative;
+}
+.intro {
+  padding: 15px;
+  font-size:14px;
+    color: rgba(255,255,255,0.7);
+    width:400px;
+}
+.coming-soon {
+  position: absolute;
+    text-decoration: none;
+    color: #ddd;
+    margin-top: 18px;
+    margin-right: 30px;
+    width:500px;
+    text-align:center;
+}
+.inactive .option-title, .inactive .option-icon {
+  opacity:0.4;
+}
 .home {
   max-width:500px;
   margin:auto;
@@ -64,9 +93,9 @@ body {
 }
 .desc {
   background-color: #00383c;
-    color: #77c4c9;
-    font-size: 16px;
-    padding: 15px;
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px 15px;
 }
 .option {
   overflow:auto;
@@ -75,7 +104,14 @@ body {
   cursor:pointer;
   background-color:#00555a;
 }
-.option:hover {
+.option.inactive {
+  background-color:#353d3e;
+  cursor:pointer;
+}
+.option.inactive a{
+  cursor:auto;
+}
+.option.active:hover {
   background-color:#0d7379;
 }
 .option-title{
@@ -112,4 +148,5 @@ body {
     font-size: 16px;
     padding: 15px 15px 5px;
 }
+
 </style>

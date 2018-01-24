@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="banner">
-      <img src="static/banner_noise.svg" alt="banner graphic for the noise section of Hey Neighbour!"/>
+      <img src="static/banner_trees.svg"  alt="banner graphic for the trees and plants section of Hey Neighbour!"/>
     </div>
     <div class="nav">
       <div class="menu">
@@ -20,49 +20,54 @@
     </v-select>
     <transition name="fade">
       <div v-if="a[0]==1">
-        <div class="question">What kind of noise is being made?</div>
+        <div class="question">What’s the problem with the tree?</div>
         <v-select v-model="q2_1" :options="options.q2_1" :searchable="false"></v-select>
       </div>
     </transition>
     <transition name="fade">
       <div v-if="a[0]==2">
-        <div class="question">What kind of noise is being made?</div>
+        <div class="question">What does your neighbour think the problem is with the tree?</div>
         <v-select v-model="q2_2" :options="options.q2_2" :searchable="false"></v-select>
       </div>
     </transition>
+		<transition name="fade">
+			<div v-if="a[0]==1 && a[1]==1" class="advice">
+				In some councils, some trees are protected and can’t be cut without council permission. Before you prune your neighbour’s tree or plant, call you local council to make sure that you don’t need a permit.<br/><br/>
+        If it’s ok to prune the tree, you are allowed to cut any branches or roots as long as they are your property. While cutting them, you cannot go onto your neighbours property or cause damage to the tree. What you cut off remains your neighbour’s property and you must return it to them.<br/><br/> 
+        It’s always a better idea to talk to your neighbour about how the tree or plant is affecting you before you prune their tree. 
+			</div>
+		</transition>
+		<transition name="fade">
+			<div v-if="a[0]==1 && a[1]==2" class="advice">
+				If your neighbour’s tree has damaged your property they may be liable to pay for the damage. <a href="https://www.liv.asn.au/find-a-lawyer">Click here</a> to use the LIV’s find a lawyer service, or <a href="http://www.fclc.org.au/find_a_clc.php">click here </a> to search for your nearest Community Legal Centre. <br/><br/>
+        It’s always a better idea to talk to your neighbour about how the tree or plant is affecting you before you seek advice from a lawyer. 
+			</div>
+		</transition>
     <transition name="fade">
-      <div v-if="a[0]==1 && a[1]==1" class="advice">
-        If you are concerned that your neighbour is in an unsafe situation, call the Domestic Violence Resource Centre Victoria on 9486 9866.<br/><br/>
-        If you believe that there is an immediate danger to your neighbour’s safety, call police on 000. 
+      <div v-if="a[0]==1 && a[1]==3" class="advice">
+        There is no law or rules in Victoria about trees or plants blocking lights or views- it’s something that you will need to discuss with your neighbour. It’s always a good idea to speak with your neighbour about how their tree or plant is affecting you. 
       </div>
     </transition>
+		<transition name="fade">
+			<div v-if="a[0]==2 && a[1]==1" class="advice">
+				In some councils, some trees are protected and can’t be cut without council permission. It might help to call your local council to see if a permit is needed.<br/><br/>
+        If it is not a protected tree, your neighbour is allowed to cut any branches or roots as long as they on their property. While cutting them, you can’t go onto your property or cause unnecessary damage to the tree. What they cut off remains your property and you must be returned to you.<br/><br/>
+        It’s always a better idea to talk to your neighbour about how the tree or plant is affecting you before you prune their tree. 
+			</div>
+		</transition>
+		<transition name="fade">
+			<div v-if="a[0]==2 && a[1]==2" class="advice">
+				If your tree has damaged your neighbour’s property you may be liable to pay for the damage.<br/><br/>
+        It’s always a better idea to talk to your neighbour about how you can address the issue to avoid escalation of the problem. 
+			</div>
+		</transition>
     <transition name="fade">
-      <div v-if="a[1]">
-        <div class="question">When does the noise occur?</div>
-        <v-select v-model="q3" :options="q3options" :searchable="false"></v-select>
-			</div>
-		</transition>
+      <div v-if="a[0]==2 && a[1]==3" class="advice">
+        There is no law or rules in Victoria about trees or plants blocking lights or views- it’s something that you will need to discuss with your neighbour. It’s always a good idea to speak with your neighbour about how their tree or plant is affecting you. 
+      </div>
+    </transition>
 		<transition name="fade">
-			<div v-if="a[0]==1">
-        <div v-if="a[1]==1 || a[1]==2 || a[1]==3">
-          <div v-if="a[2] > 1" class="advice" v-html="options.a[0]"></div>
-          <div v-else-if="a[2] == 1" class="advice" v-html="options.a[1]"></div>
-        </div>
-        <div v-else-if="a[1] > 3">
-          <div v-if="a[2] == 1" class="advice" v-html="options.a[0]"></div>
-          <div v-else-if="a[2] > 1" class="advice" v-html="options.a[1]"></div>
-        </div>
-			</div>
-			<div v-else-if="a[0]==2">
-        <div v-if="a[2] == 1" class="advice" v-html="options.a[2]"></div>
-        <div v-else-if="a[2] > 1" class="advice" v-html="options.a[3]"></div>
-			</div>
-		</transition>
-		<transition name="fade">
-			<div v-if="a[2]">
-        <div class="options-title">
-          Actions you can take
-        </div>
+			<div v-if="a[1]">
 				<div class="list-group" v-model="q4">
 					<button v-bind:class="{ active: active==1 }" v-on:click="showAction(1)" type="button" class="list-group-item list-group-item-action" v-model="q4">
 						I’d like tips on how to have a conversation
@@ -74,13 +79,12 @@
 		</transition>
 		<transition name="fade">
 			<div v-if="active==1" class="advice">
-				Your neighbour might not know that the noise coming from their property is bothering
-				you. It’s a good idea to approach your neighbour and have a conversation about it.
+				Your neighbour might not know that the tree coming from their property is affecting you. It’s a good idea to approach your neighbour and have a conversation about it.
 				<br/><br/>
 				If you’re feeling nervous about have a chat, try preparing a few points about what you
 				might say to your neighbour. A good conversation might sound like this:
 				<br/>
-				<div class="quotes">"Hey neighbour! I’m Kate and I live next door. I wanted to talk with you about what I’ve been hearing- I think it’s a power tool, and I have trouble sleeping when it’s on late at night. Would you be open to using it during the day?”</div>
+				<div class="quotes">"Hey neighbour! I’m Kate and I live next door. I wanted to talk with you about the tree branches that come into our yard- I worry that my kids might hurt themselves on one of them. Would you be open to me cutting back the branches where they are on my property?”</div>
 				<br/> 
 				It’s best to stay calm and listen to your neighbour.
 				<br/><br/>
@@ -89,12 +93,12 @@
 		</transition>
 		<transition name="fade">
 			<div v-if="active==2" class="advice">
-				<a href="https://s3-ap-southeast-2.amazonaws.com/hey-neighbour/docs/HN-+Template+letter+-+NOISE.docx" target="_blank">Click here</a> for a template letter you can use.
-			</div>
+        <a href="https://s3-ap-southeast-2.amazonaws.com/hey-neighbour/docs/HN+-+Template+letter-+trees.docx" target="_blank">Click here</a> for a template letter you can use.
+      </div>
 		</transition>
 		<transition name="fade">
 			<div v-if="active==3" class="advice">
-				If you’ve tried to resolve your noise problem with your neighbour and you haven’t been able to agree to a solution that works for you, there are a number of services in Victoria that might be able to help.<br/><br/>
+				If you’ve tried to resolve the problem with your neighbour and you haven’t been able to agree to a solution that works for you, there are a number of services in Victoria that might be able to help.<br/><br/>
 				The <b>Environment Protection Authority</b> is the regulator responsible for the Victorian environment. They have responsibility under legislation for prohibited residential noise.<br/>
 				Phone: 1300 372 842<br/>
 				Web: <a href="http://epa.vic.gov.au">epa.vic.gov.au</a><br/><br/>
@@ -113,7 +117,7 @@
 </template>
 
 <script>
-  import data from '../assets/noise.json'
+  import data from '../assets/trees.json'
 
   import Vue from 'vue'
   var VueSelect = require('vue-select')
@@ -121,15 +125,13 @@
   Vue.component('v-select', VueSelect.VueSelect)
 
   export default {
-    name: 'Noise',
+    name: 'Trees',
     data () {
       return {
         a: [],
         q1: '',
         q2_1: '',
         q2_2: '',
-        q3: '',
-        q4: '',
         active: '',
         vue: Vue,
         show: true,
@@ -137,80 +139,30 @@
         date: null
       }
     },
+    messages: {
+    },
     computed: {
-      // a computed getter
-      q3options: function () {
-        // `this` points to the vm instance
-        var returnOptions = []
-        if (this.a[0] === 1){
-          if (this.a[1] === 1 || this.a[1] === 2 || this.a[1] === 3 || this.a[1] === 11) { returnOptions.push(this.getOptionFromValue(2)) }
-          if (this.a[1] === 4 || this.a[1] === 5 || this.a[1] === 6 || this.a[1] === 7) { returnOptions.push(this.getOptionFromValue(3)) }
-          if (this.a[1] === 8 || this.a[1] === 12) { returnOptions.push(this.getOptionFromValue(4)) }
-          if (this.a[1] === 9 || this.a[1] === 10) { returnOptions.push(this.getOptionFromValue(5)) }
-        } else if (this.a[0] === 2){
-          if (this.a[1] === 2 || this.a[1] === 3 || this.a[1] === 4 || this.a[1] === 5) { returnOptions.push(this.getOptionFromValue(3)) }
-          if (this.a[1] === 3) { returnOptions.push(this.getOptionFromValue(4)) }
-          if (this.a[1] === 1 || this.a[1] === 7 || this.a[1] === 8 || this.a[1] === 9) { returnOptions.push(this.getOptionFromValue(5)) }
-        }
-        returnOptions.push(this.getOptionFromValue(1))
-        return returnOptions
-      }
     },
     watch: {
       q1: function (response) {
         this.a = []
         this.a[0] = parseInt(this.q1.value)
-        this.active = 0
       },
       q2_1: function (response) {
         this.a = this.a.slice(0, 1)
         this.a[1] = parseInt(this.q2_1.value)
-        this.active = 0
       },
       q2_2: function (response) {
         this.a = this.a.slice(0, 1)
         this.a[1] = parseInt(this.q2_2.value)
-        this.active = 0
-      },
-      q3: function (response) {
-        this.a = this.a.slice(0, 2)
-        this.a[2] = parseInt(this.q3.value)
-      },
-      q4: function (response) {
-        this.a[3] = parseInt(this.q4)
       }
     },
     methods: {
       showAction: function (number) {
         this.active = number
-      },
-      setAnswer: function (person) {
-        window.console.log('set answer')
-        this.a[0] = person
-      },
-      getOptionFromValue: function (val) {
-        for (var i = 0; i < this.options.q3.length; i++) {
-          if (this.options.q3[i].value === val) return this.options.q3[i]
-        }
-        return null
       }
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-.further-action {
-  font-weight:bold;
-  text-decoration: underline;
-  cursor:pointer;
-}
-body {
-  color:white;
-}
-.options-title {
-      margin-left: 15px;
-    margin-top: 30px;
-    font-weight: bold;
-}
-</style>

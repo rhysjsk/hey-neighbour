@@ -30,10 +30,16 @@
     {"value":9, "label":"Another kind of noise"}
   ],
   "q3":[
-    {"value":0, "label":"Outside these hours"},
-    {"value":1, "label":"Between 7am - 8pm on weekdays and 9am and 8pm on weekends"},
-    {"value":2, "label":"Between 7 am - 10 pm on weekdays and 9 am and 10 pm on weekends"},
-    {"value":3, "label":"Between 7 am - 10 pm on weekdays, 9 am and 11 pm on Friday and Saturday, and 9 am and 10 pm on Sunday"},
-    {"value":4, "label":"Between midnight and 8am"}
+    {"value":1, "label":"Outside these hours"},
+    {"value":2, "label":"Between midnight and 8am"},
+    {"value":3, "label":"Between 7am - 8pm on weekdays and 9am and 8pm on weekends"},
+    {"value":4, "label":"Between 7 am - 10 pm on weekdays and 9 am and 10 pm on weekends"},
+    {"value":5, "label":"Between 7 am - 10 pm on weekdays, 9 am and 11 pm on Friday and Saturday, and 9 am and 10 pm on Sunday"}
+  ],
+  "a":[
+    "It's prohibited in Victoria to make this kind of noise at this time. We suggest having a chat with your neighbour.",
+    "There is no prohibition relating to this kind of noise in the times you've described. Any kind of noise can be unreasonable if it can be heard inside your home, but this depends on where you live and the type of noise that's being made. If you feel that the noise is impacting your wellbeing, or you're finding that you're regularly bothered by it, we suggest having a chat to your neighbour.",
+    "It's prohibited in Victoria to make this kind of noise at this time. We suggest finding a way to stop making the noise between these hours.",
+    "There is no prohibition relating to this kind of noise in the times you've described. Any kind of noise can be unreasonable if it can be heard inside your home, but this depends on where you live and the type of noise that's being made. If your neighbour says that the noise is impacting their wellbeing, or they are finding that they are regularly bothered by it, we suggest having a chat to your neighbour about how you can reduce the impact on their quality of life. <br/><br/> In the future, it might help to give your neighbours notice if you're planning on something that might impact them, such as a party or renovations. We suggest writing a letter to let them know when you're planning on the change and giving them your contact details so that they can discuss the issue with you."
   ]
 }

@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from './components/Footer.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Footer
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color:#111;
-}
 </style>
