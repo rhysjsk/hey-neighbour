@@ -67,7 +67,8 @@ body {
   padding: 15px;
   font-size:14px;
     color: rgba(255,255,255,0.7);
-    width:400px;
+    max-width:400px;
+    margin-right:80px;
 }
 .coming-soon {
   position: absolute;
@@ -75,7 +76,7 @@ body {
     color: #ddd;
     margin-top: 18px;
     margin-right: 30px;
-    width:500px;
+    width:100%;
     text-align:center;
 }
 .inactive .option-title, .inactive .option-icon {

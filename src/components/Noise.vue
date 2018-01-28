@@ -142,12 +142,12 @@
       q3options: function () {
         // `this` points to the vm instance
         var returnOptions = []
-        if (this.a[0] === 1){
+        if (this.a[0] === 1) {
           if (this.a[1] === 1 || this.a[1] === 2 || this.a[1] === 3 || this.a[1] === 11) { returnOptions.push(this.getOptionFromValue(2)) }
           if (this.a[1] === 4 || this.a[1] === 5 || this.a[1] === 6 || this.a[1] === 7) { returnOptions.push(this.getOptionFromValue(3)) }
           if (this.a[1] === 8 || this.a[1] === 12) { returnOptions.push(this.getOptionFromValue(4)) }
           if (this.a[1] === 9 || this.a[1] === 10) { returnOptions.push(this.getOptionFromValue(5)) }
-        } else if (this.a[0] === 2){
+        } else if (this.a[0] === 2) {
           if (this.a[1] === 2 || this.a[1] === 3 || this.a[1] === 4 || this.a[1] === 5) { returnOptions.push(this.getOptionFromValue(3)) }
           if (this.a[1] === 3) { returnOptions.push(this.getOptionFromValue(4)) }
           if (this.a[1] === 1 || this.a[1] === 7 || this.a[1] === 8 || this.a[1] === 9) { returnOptions.push(this.getOptionFromValue(5)) }

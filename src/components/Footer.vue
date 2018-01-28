@@ -19,14 +19,13 @@
   font-size:12px;
   margin-top:30px;
   position:absolute;
-  width:500px;
+  width:100%;
   bottom:10px;
 }
 .footer a {
-    font-size: 16px;
-    color: white;
-    padding-bottom: 5px;
-    text-decoration: none;
-
+  font-size: 16px;
+  color: white;
+  padding-bottom: 5px;
+  text-decoration: none;
 }
 </style>
